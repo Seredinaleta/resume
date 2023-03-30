@@ -1,0 +1,39 @@
+{{!
+Це код container файлу для skills сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/skills"
+}}
+
+<div>
+
+  <main>
+    <section>
+      {{>title data='My education' big=true}}
+      {{#with main}}
+        <ul>
+          {{#each educations}}
+            <li>{{name}}
+              {{#unless isEnd}} - навчання триває {{/unless}}</li>
+          {{/each}}
+        </ul>
+      
+    </section>
+    <section>
+      {{>title data='My certificates'}}
+      <ul>
+        {{#each certificates}}
+        <li><div>{{name}} ({{id}})</div>
+        <div><em>{{org}}</em> | {{date}}</div>
+        <hr>
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+    {{/with}}
+  </main>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}

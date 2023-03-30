@@ -2,7 +2,32 @@
 const express = require('express')
 // Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
-
+// ==================================================================
+var header = {
+  name: {
+    firstname: 'Yuliia',
+    lastname: 'Trubina',
+  },
+  position: 'Junior Fullstack JS Developer',
+  salary: '600$ в місяць',
+  address: 'Kyiv, Ukraine',
+}
+var footer = {
+  social: {
+    email: {
+      text: 'seredinaleta.gmail.com',
+      href: 'mailto: seredinaleta.gmail.com',
+    },
+    LinkedIn: {
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/yuliia-trubina-b0782b247/',
+    },
+    tel: {
+      text: '+38(068)1260173',
+      href: 'tel: +380681260173',
+    },
+  },
+}
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -23,9 +48,221 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | Summary',
+    },
+    header,
+    main: {
+      summary: {
+        title: 'Summary',
+        text: `Open-minded for new technologies, with 1 years of experience in development. Whenever I start to work on a new project I learn the domain and try to understand the idea of the project. Good team player, every colleague is a friend to me.`,
+      },
+      experience: {
+        title: 'Other experience',
+        text: `Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics ( tournament position, goals etc), analyzing by simple mathematics models and preparing probability for such events like: money line - first win / draw / second win, totals etc.`,
+      },
+    },
+    footer,
   })
 })
+router.get('/skills', function (req, res) {
+  res.render('skills', {
+    // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | Skills',
+    },
+    header,
+    main: {
+      skills: [
+        {
+          name: 'HTML',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'CSS',
+          point: 7,
+          isTop: false,
+        },
+        {
+          name: 'Handlebars',
+          point: 9,
+          isTop: false,
+        },
+        {
+          name: 'VS Code',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'Terminal',
+          point: 6,
+        },
+        {
+          name: 'NPM',
+          point: 7,
+        },
+        {
+          name: 'SQL',
+          point: 8,
+          isTop: true,
+        },
+        {
+          name: 'React.js',
+          point: 0,
+        },
+        {
+          name: 'PHP',
+          point: null,
+        },
+      ],
+      hobbies: [
+        {
+          name: 'Astrology',
+          isMain: false,
+        },
+        {
+          name: 'Philosophy',
+          isMain: false,
+        },
+        {
+          name: 'Travelling',
+          isMain: true,
+        },
+      ],
+    },
+    footer,
+  })
+})
+router.get('/education', function (req, res) {
+  res.render('education', {
+    // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | Education',
+    },
+    header,
+    main: {
+      educations: [
+        {
+          name: '`PHYMLY lyceum`, Cherkassy',
+          isEnd: true,
+        },
+        {
+          name: 'National Technical University of Ukraine `Kyiv Polytechnic Institute`',
+          isEnd: true,
+        },
+        {
+          name: 'IT-Brain Course',
+          isEnd: false,
+        },
+      ],
+      certificates: [
+        {
+          name: 'EF SET English Certificate 68/100 (C1 Advanced)',
+          org: 'The EF Standard English Test (EF SET)',
+          id: 001,
+          date: 'June 2022',
+        },
+        {
+          name: 'EPAM - IT Marathon diploma',
+          org: 'EPAM University Program',
+          id: 002,
+          date: 'December 2022',
+        },
+        {
+          name: 'IT-BRAINS diploma Full-stack JS Developer',
+          org: 'IT-BRAINS',
+          id: 003,
+          date: 'September 2023',
+        },
+      ],
+    },
+    footer,
+  })
+})
+router.get('/work', function (req, res) {
+  res.render('work', {
+    // ↙ сюди вводимо JSON дані
+    layout: 'big',
+    page: {
+      title: 'Resume | Work',
+    },
+    header,
+    main: {
+      works: [
+        {
+          position: 'Junior Fullstack Developer',
+          company: {
+            name: 'IT Brains',
+            url: null,
+            // url: 'https://it-brains.com.ua',
+          },
+          duration: {
+            from: '01.2023',
+            // to: '09.2023',
+          },
+          projectAmount: 3,
+          projects: [
+            {
+              name: 'Resume',
+              url: 'https://thriving-kelpie-740c05.netlify.app/',
+              about: 'Multipage CV on Handlebars engine',
+              stackAmount: 4,
+              stacks: [
+                {
+                  name: 'Handlebars',
+                },
+                {
+                  name: 'HTML / CSS',
+                },
+                {
+                  name: 'React.js',
+                },
+                {
+                  name: 'Node.js',
+                },
+              ],
+              awardAmount: 2,
+              awards: [
+                {
+                  name: 'Backgruond verification - is a feature that provides users to prove that they are real persons',
+                },
+                {
+                  name: 'Backgruond verification - is a feature that provides users to prove that they are real persons',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          position:
+            'Accountant for IT individual entrepreneurs',
+          company: {
+            name: 'InterLink LLS',
+            url: 'https://www.linkedin.com/company/interlink-llc-ukraine/mycompany/',
+          },
+          duration: {
+            from: '10.2020',
+            to: '01.2023',
+          },
+        },
+        {
+          position: 'Owner/Director',
+          company: {
+            name: 'TA SeredinaLeta',
+            url: 'https://seredinaleta.com.ua/',
+          },
+          duration: {
+            from: '07.2013',
+            // to: '02.2022',
+          },
+        },
+      ],
+    },
 
+    footer,
+  })
+})
 // ================================================================
 
 // Підключаємо роутер до бек-енду
