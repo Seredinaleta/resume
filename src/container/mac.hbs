@@ -1,0 +1,224 @@
+{{! 
+Це код container файлу для index сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+ }}
+
+<div>
+  <main>
+    <h1><div>{{name}}</div></h1>
+    <p class="lead"><b>{{description}}</b></p>      
+  <br>
+  <span class="badge text-bg-secondary">{{category}}</span>
+  <span class="badge text-bg-secondary">{{price}}</span>
+  
+  <br>
+  <br>
+  {{>title data='Features' big = true}}
+  <hr>
+{{#with features}}
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Processor
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with processor}}
+        <ul>
+          <li><div><b>brand:</b>  {{brand}}</div></li>
+          <li><div><b>model:</b>  {{model}}</div></li>
+          <li><div><b>speed:</b>  {{speed}}</div></li>
+          <li><div><b>cores:</b>  {{cores}}</div></li>
+          <li><div><b>cache:</b>  {{cache}}</div></li>
+        </ul>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Memory
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with memory}}
+        <ul>
+          <li><div><b>type:</b>  {{type}}</div></li>
+          <li><div><b>size:</b>  {{size}}</div></li>
+          <li><div><b>speed:</b>  {{speed}}</div></li>
+        </ul>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Storage
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with storage}}
+        <ul>
+          <li><div><b>type:</b>  {{type}}</div></li>
+          <li><div><b>size:</b>  {{size}}</div></li>
+        </ul>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+   <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Display
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with display}}
+        <ul>
+          <li><div><b>size:</b>  {{size}}</div></li>
+          <li><div><b>resolution:</b>  {{resolution}}</div></li>
+          <li><div><b>technology:</b>  {{technology}}</div></li>
+          <li><div><b>color_space:</b>  {{color_space}}</div></li>
+          <li><div><b>brightness:</b>  {{brightness}}</div></li>
+          <li><div><b>refresh_rate:</b>  {{refresh_rate}}</div></li>
+        </ul>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+ <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Graphics
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with graphics}}
+        <ul>
+          <li><div><b>brand:</b>  {{brand}}</div></li>
+          <li><div><b>model:</b>  {{model}}</div></li>
+          <li><div><b>memory:</b>  {{memory}}</div></li>
+        </ul>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+<div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Battery
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with battery}}
+        <ul>
+          <li><div><b>type:</b>  {{type}}</div></li>
+          <li><div><b>capacity:</b>  {{capacity}}</div></li>
+          <li><div><b>life:</b>  {{life}}</div></li>
+        </ul>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Weight
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <ul>
+          <li><div><b>type:</b>  {{weight}}</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Dimensions
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with dimensions}}
+        <ul>
+          <li><div><b>height:</b>  {{height}}</div></li>
+          <li><div><b>width:</b>  {{width}}</div></li>
+          <li><div><b>depth:</b>  {{depth}}</div></li>
+        </ul>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+   <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Operating_system
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <p>{{operating_system}}</p>
+      </div>
+    </div>
+  </div>
+</div>  
+
+<hr>
+<div>  <p class="lead"><b>Ports</b></p>
+    {{#each ports}}
+    <span class='dropdown'>
+      <button
+        type='button'
+        class='btn btn-outline-secondary dropdown-toggle'
+        data-bs-toggle='dropdown'
+        aria-expanded='false'
+      >{{type}}</button>
+      <ul class='dropdown-menu'>
+              <li>
+                <div><b>count:</b>  {{count}}</div>
+                <div>
+                  {{#each features}}
+                  {{this}}
+                  {{/each}}
+                </div>
+              </li>
+        </ul>
+    </span>
+    {{/each}} 
+  </div>
+  <hr>
+<div>  <p class="lead"><b>Accessories</b></p>  
+      
+        <ul>
+          {{#each accessories}}
+          <li>
+                  <div>
+                    {{name}} - <span class="badge text-bg-secondary">{{price}}</span>
+                  </div>
+          </li>
+          {{/each}}      
+          </ul>
+      
+  
+
+
+{{/with}} 
+</main>
+</div>
+
+{{! 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+}}
