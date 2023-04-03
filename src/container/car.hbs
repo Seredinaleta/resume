@@ -1,0 +1,480 @@
+{{! 
+Це код container файлу для index сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+ }}
+
+<div>
+  <main>
+    <h1><div>{{make}} {{model}}</div>
+    
+      <div><small class='text-body-secondary'>{{year}}
+            -
+            {{color}}</small></div></h1>
+  <br>
+  
+  {{>title data='Features' big = true}}
+  <hr>
+{{#with features}}
+    {{>title data='Interior'}}
+    {{#with interior}}
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Seats
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with seats}}
+        <ul>
+          <li>
+               <div><b>material:</b>  {{material}}</div>
+          </li>
+          <li>  <div><b>color:</b>  {{color}}</div>
+          </li>
+          <li>
+            <div><b>heated:</b>  
+            {{#if heated}}
+              +
+              {{else}}
+              -
+            {{/if}}
+            </div>
+          </li>
+        </ul>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Dashboard
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with dashboard}}
+        <ul>
+          <li>
+               <div><b>material:</b>  {{material}}</div>
+          </li>
+          <li>  <div><b>color:</b>  {{color}}</div>
+          </li>
+          <li>
+            {{#with display}}
+            <div><b>display:</b>
+              <ul>
+                <li>
+                  <div><b>type:</b>  {{type}}</div>
+                  <div><b>size:</b>  {{size}}</div>
+                  <div><b>resolution:</b>  {{resolution}}</div>
+                  <div><b>touchscreen:</b> 
+                    {{#if touchscreen}}
+                      +
+                      {{else}}
+                      -
+                    {{/if}}
+                   </div>
+                </li>
+              </ul>
+            </div>
+            {{/with}}
+          </li>
+        </ul>
+        {{/with}}</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Audio
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">{{#with audio}}
+        <ul>
+          <li>
+               <div><b>system:</b>  {{system}}</div>
+          </li>
+          <li>  <div><b>speakers:</b>  {{speakers}}</div>
+          </li>
+          <li>
+            <div><b>subwoofer:</b>  
+            {{#if subwoofer}}
+              +
+              {{else}}
+              -
+            {{/if}}
+            </div>
+          </li>
+          <li>
+            <div><b>bluetooth:</b>  
+            {{#if bluetooth}}
+              +
+              {{else}}
+              -
+            {{/if}}
+            </div>
+          </li>
+          <li>
+            <div><b>USB:</b>  
+            {{#if USB}}
+              +
+              {{else}}
+              -
+            {{/if}}
+            </div>
+          </li>
+        </ul>
+        {{/with}}</div>
+    </div>
+  </div>
+</div>
+    {{/with}}
+    <hr>
+    {{>title data='Exterior'}}
+    {{#with exterior}}
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Wheels
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with wheels}}
+        <ul>
+          <li>
+               <div><b>size:</b>  {{size}}</div>
+          </li>
+          <li>  <div><b>type:</b>  {{type}}</div>
+          </li>
+          <li>
+            <div><b>color: {{color}}</b></div>
+          </li>
+        </ul>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Headlights
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with headlights}}
+        <ul>
+          <li><div><b>type:</b>  {{type}}</div></li>
+          <li><div><b>brightness:</b>  {{brightness}}</div></li>
+          <li><div><b>automatic:</b>
+                      {{#if automatic}}
+                                  +
+                      {{else}}
+                      -
+                    {{/if}}
+                   </div>
+          </li>
+        </ul>
+        {{/with}}    
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Sunroof
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with sunroof}}
+        <ul>
+          <li>
+               <div><b>type:</b>  {{type}}</div>
+          </li>
+          <li>  <div><b>size:</b>  {{size}}</div>
+          </li>
+          <li>
+            <div><b>automatic:</b>
+                      {{#if automatic}}
+                                  +
+                      {{else}}
+                      -
+                    {{/if}}
+                   </div>
+            </li>
+              </ul>
+            </div>
+            {{/with}}
+          </li>
+        </ul>
+        </div>
+  </div>
+  </div>
+  {{/with}}
+  <hr>
+    {{>title data='Safety'}}
+    {{#with safety}}
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Airbags
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with airbags}}
+        <ul>
+          <li>
+               <div><b>front:</b>  {{front}}</div>
+          </li>
+          <li>  <div><b>side:</b>  {{side}}</div>
+          </li>
+          <li>
+            <div><b>knee: {{knee}}</b></div>
+          </li>
+          <li>
+            <div><b>rear: {{rear}}</b></div>
+          </li>
+        </ul>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Assistance
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with assistance}}
+        <ul>
+          <li><div><b>blind_spot_monitoring:</b>
+                      {{#if blind_spot_monitoring}}
+                                  +
+                      {{else}}
+                      -
+                    {{/if}}
+                   </div>
+          </li>
+          <li><div><b>rear_cross_traffic_alert:</b>
+                      {{#if rear_cross_traffic_alert}}
+                                  +
+                      {{else}}
+                      -
+                    {{/if}}
+                   </div>
+          </li>
+          <li><div><b>lane_departure_warning:</b>
+                      {{#if lane_departure_warning}}
+                                  +
+                      {{else}}
+                      -
+                    {{/if}}
+                   </div>
+          </li>
+          <li><div><b>adaptive_cruise_control:</b>
+                      {{#if adaptive_cruise_control}}
+                                  +
+                      {{else}}
+                      -
+                    {{/if}}
+                   </div>
+          </li>
+          <li><div><b>collision_warning:</b>
+                      {{#if collision_warning}}
+                                  +
+                      {{else}}
+                      -
+                    {{/if}}
+                   </div>
+          </li>
+        </ul>
+        {{/with}}    
+      </div>
+    </div>
+  </div>
+  </div>
+    {{/with}}
+{{/with}}
+<br>
+<hr>
+  {{>title data='Engine' big = true}}
+  {{#with engine}}
+   <span class='dropdown'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary dropdown-toggle'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >type</button>
+  <ul class='dropdown-menu'>
+          <li>{{type}}</li>
+  </ul>
+</span>
+ <span class='dropdown'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary dropdown-toggle'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >displacement</button>
+  <ul class='dropdown-menu'>
+          <li>{{displacement}}</li>
+  </ul>
+</span>
+ <span class='dropdown'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary dropdown-toggle'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >horsepower</button>
+  <ul class='dropdown-menu'>
+          <li>{{horsepower}}</li>
+  </ul>
+</span>
+ <span class='dropdown'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary dropdown-toggle'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >torque</button>
+  <ul class='dropdown-menu'>
+          <li>{{torque}}</li>
+  </ul>
+</span>
+<br>
+
+   <div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        transmission
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        {{#with transmission}}
+        <ul>
+          <li>
+               <div><b>type:</b>  {{type}}</div>
+          </li>
+          <li>  <div><b>gears:</b>  {{gears}}</div>
+          </li>
+        </ul>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  </div>
+  {{/with}}
+<hr>
+
+  {{>title data='Fuel_economy' big = true}}
+  {{#with fuel_economy}}
+  <span class='dropdown'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary dropdown-toggle'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >city</button>
+  <ul class='dropdown-menu'>
+          <li>{{city}}</li>
+  </ul>
+</span>
+<span class='dropdown'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary dropdown-toggle'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >highway</button>
+  <ul class='dropdown-menu'>
+          <li>{{highway}}</li>
+  </ul>
+</span>
+<span class='dropdown'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary dropdown-toggle'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >combined</button>
+  <ul class='dropdown-menu'>
+          <li>{{combined}}</li>
+  </ul>
+</span>
+  {{/with}}
+<br>
+<hr>
+  {{>title data='Price' big = true}}
+  {{#with price}}
+  <span class='dropdown'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary dropdown-toggle'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >base</button>
+  <ul class='dropdown-menu'>
+          <li>{{base}}</li>
+  </ul>
+</span>
+<span class='dropdown'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary dropdown-toggle'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >destination</button>
+  <ul class='dropdown-menu'>
+          <li>{{destination}}</li>
+  </ul>
+</span>
+<span class='dropdown'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary dropdown-toggle'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >options</button>
+  <ul class='dropdown-menu'>
+    {{#with options}}
+          <li><b>navigation: </b>{{navigation}}</li>
+          <li><b>bmoonroof: </b>{{moonroof}}</li>
+          <li><b>premium_paint: </b>{{premium_paint}}</li>
+    {{/with}}      
+  </ul>
+</span>
+<span class='dropdown'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary dropdown-toggle'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >total</button>
+  <ul class='dropdown-menu'>
+          <li>{{total}}</li>
+  </ul>
+</span>
+<br>
+{{/with}}
+  </main>
+</div>
+
+{{! 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+}}
