@@ -8,6 +8,7 @@
   <main>
     <section>
       {{>title data='My education' big=true}}
+      <br>
       {{#with main}}
         <ul>
           {{#each educations}}
@@ -19,6 +20,7 @@
     </section>
     <section>
       {{>title data='My certificates'}}
+      <br>
       <ul>
         {{#each certificates}}
         <li><div>{{name}} ({{id}})</div>
