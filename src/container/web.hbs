@@ -1,0 +1,70 @@
+<div>
+  <header>
+  {{#with web}}
+      <h1>Web languages</h1>
+  </header>
+  <main> 
+    {{#each languages}}
+    <ul>
+      <li>
+        <div>{{>title data=name big=true}}</div>
+        <div>Version: {{version}}</div>
+        <br>
+        <div><em>{{description}}</em></div>
+        {{#each elements}}
+        <ul>
+          <li>
+            <div>{{>title data=name}}</div>
+            <div><em>{{description}}</em></div>
+            {{#each attributes}}
+            <dl>
+              <dt>{{name}}</dt>
+              <dd>{{description}}</dd>
+            </dl>
+            {{/each}}
+            <hr>
+          </li>
+        </ul>
+        {{/each}}
+        {{#each properties}}
+        <ul>
+          <li>
+            <div>{{>title data=name}}</div>
+            <div><em>{{description}}</em></div>
+            {{#each values}}
+            <dl>
+              <dt>{{value}}</dt>
+              <dd>{{description}}</dd>
+            </dl>
+            {{/each}}
+             <hr>
+          </li>
+        </ul>
+        {{/each}}
+        {{#each functions}}
+        <ul>
+          <li>
+            <div>{{>title data=name}}</div>
+            <div><em>{{description}}</em></div>
+            <br>
+            {{#each parameters}}
+            <ul>
+              <li>
+                <div>Parametr: <b>{{name}}</b>  | Type: <b>{{type}}</b></div>
+                <br>
+                <div><em>{{description}}</em></div>
+                <br>
+              </li>
+            </ul>
+            {{/each}}
+             <hr>
+          </li>
+        </ul>
+        {{/each}}
+      </li>
+    </ul>  
+    {{/each}}
+  {{/with}}
+  </main>
+</div>
+
