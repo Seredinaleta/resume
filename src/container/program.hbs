@@ -1,10 +1,4 @@
-{{!
-Це код container файлу для skills сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/skills"
-}}
-
 <div>
-
   <main>
     <header>
       {{#with program}}
@@ -30,9 +24,7 @@
                     <li>
                       <div><b>{{name}}</b> {{artist}}</div>
                       <div><em>{{description}}</em></div>
-                      <div>
-                        {{#if audio_guide}} audio-guide{{/if}}
-                      </div>
+                      <div>{{#if audio_guide}} audio-guide{{/if}}</div>
                       <hr>
                     </li>
                   </ul>
@@ -54,7 +46,6 @@
                       </li>
                     </ul>
                     {{/each}}
-                
                 {{#with guide}}
                 <div><b>Guide: {{name}} {{language}} Rating: {{rating}}</b></div>
                 {{/with}}
