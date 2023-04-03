@@ -1,0 +1,70 @@
+{{!
+Це код container файлу для skills сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/skills"
+}}
+
+<div>
+
+  <main>
+    <header>
+      {{#with program}}
+        {{#with excursion}}  
+          <h1>{{name}}</h1>
+          <div><em>{{#with location}}{{city}}, {{country}} {{/with}}: {{date}}</em></div>
+    </header>
+        <section>
+          {{#each program}}
+          <ul>
+            <li>
+              {{>title data=name big=true}}
+              <div>Type: {{type}} | Duration: {{duration}} hours</div>
+              {{#with details}}
+                {{#with museum}}
+                  {{>title data=name}}
+                  {{#with location}}
+                  <div><address>{{address}}, {{city}}, {{country}}  </address></div>
+                  {{/with}}
+                  <br>
+                  {{#each exhibits}}
+                  <ul>
+                    <li>
+                      <div><b>{{name}}</b> {{artist}}</div>
+                      <div><em>{{description}}</em></div>
+                      <div>
+                        {{#if audio_guide}} audio-guide{{/if}}
+                      </div>
+                      <hr>
+                    </li>
+                  </ul>
+                  {{/each}}
+                {{/with}}
+                {{#with venue}}
+                  {{>title data=name}}
+                      {{#with location}}
+                    <div><address>{{address}}, {{city}}, {{country}}</address></div>
+                    <br>
+                      {{/with}}
+                {{/with}}
+                  {{#each performers}}
+                    <ul>
+                      <li>
+                        <div><b>{{name}}</b></div>
+                        <div><em>{{type}}</em></div>
+                        <hr>
+                      </li>
+                    </ul>
+                    {{/each}}
+                
+                {{#with guide}}
+                <div><b>Guide: {{name}} {{language}} Rating: {{rating}}</b></div>
+                {{/with}}
+              {{/with}}
+            </li>
+          </ul>
+          {{/each}}
+        </section>
+        {{/with}}
+      {{/with}}
+  </main>
+</div>
+
