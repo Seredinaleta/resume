@@ -1094,6 +1094,7 @@ router.get('/facebook', function (req, res) {
 })
 
 // ================================================================
+
 router.get('/bootstrap', function (req, res) {
   res.render('bootstrap', {
     layout: 'bootstrap',
@@ -1231,5 +1232,6 @@ router.get('/task22', function (req, res) {
 })
 
 // ================================================================
+
 // Підключаємо роутер до бек-енду
 module.exports = router
