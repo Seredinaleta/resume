@@ -1,0 +1,83 @@
+<div>
+  <main>
+    <h1><div>{{name}}</div>
+  <br>
+  <div><small class="text-body-secondary"><i>{{description}}</i></small></div>
+</h1>
+   
+    <br />
+    {{#with history}}
+      <div>{{founder}} - {{year}}</div>
+    {{/with}}
+    <br />
+    {{>title data='Types' big=true}}
+    <br />
+    {{#each types}}
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+    <button type="button" class="btn btn-outline-secondary">{{this}}</button>
+    </div>
+    {{/each}}
+    <br />
+    <hr>
+    <div>{{>title data='Syntax' big=true}}</div>
+    <br />
+    {{#with syntax}}
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+    {{>dropdown button-name='variables' data=variables }}
+    {{>dropdown button-name='functions' data=functions }}
+    {{>dropdown button-name='conditionals' data=conditionals }}
+    {{>dropdown button-name='loops' data=loops }}
+    {{>dropdown button-name='classes' data=classes }}
+    </div>
+    {{/with}}
+    <br>
+    <hr>
+    <div>{{>title data='Features' big=true}}</div>
+    {{#each features}}
+    <ul>
+      <li>
+        <div>{{this}}</div>
+      </li>
+      </ul>
+    {{/each}}
+    <br>
+    <div>{{>title data='Libraries' big=true}}</div>
+    {{#each libraries}}
+    <span class="badge text-bg-secondary">{{this}}</span>
+    {{/each}}
+    <br>
+    <hr>
+    <div>{{>title data='Tools' big=true}}</div>
+    {{#each tools}}
+    <span class="badge text-bg-secondary">{{this}}</span>
+    {{/each}}
+    <br>
+    <hr>
+    <div>{{>title data='Community' big=true}}</div>
+    <br>
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+    {{#each community}}    
+    <div class='dropdown'>
+  <button
+    type='button'
+    class='btn btn-outline-secondary dropdown-toggle'
+    data-bs-toggle='dropdown'
+    aria-expanded='false'
+  >{{name}}</button>
+  <ul class='dropdown-menu'>
+    {{#with type}}
+      <li><a
+          class='dropdown-item'
+          href='#'
+        >{{this}}</a></li>
+    {{/with}}
+  </ul>
+</div>
+    {{/each}}
+      </div>
+    
+    <br>
+    <br>
+
+  </main>
+</div>
