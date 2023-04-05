@@ -748,7 +748,10 @@ router.get('/js', function (req, res) {
       },
     ],
     footer,
-=======
+  })
+})
+
+// ================================================
 router.get('/car', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -1226,7 +1229,6 @@ router.get('/task22', function (req, res) {
         },
       },
     },
-
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
