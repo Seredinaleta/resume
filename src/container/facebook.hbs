@@ -1,0 +1,170 @@
+{{! 
+Це код container файлу для index сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+ }}
+
+<div>
+  <main>
+    <h1><div>{{name}}</div></h1>
+    <p class='lead'><b>Users</b></p>
+    <hr />
+    <ul>
+      {{#each users}}
+        <li>
+          <div><h2>id:
+              {{id}}.
+              {{name}}
+              |
+              {{gender}},
+              {{age}}
+              years
+            </h2></div>
+          <div>
+            <h3><small
+                class='text-body-secondary'
+              >Friends:</small></h3>
+            {{#each friends}}
+              <div>id:
+                {{id}}.
+                {{name}}
+                |
+                {{gender}},
+                {{age}}
+                years</div>
+              <br />
+              {{#each mutual_friends}}
+                <div><span
+                    class='badge rounded-pill text-bg-secondary'
+                  >mutual friend: id:
+                    {{id}}.
+                    {{name}}
+                    |
+                    {{gender}},
+                    {{age}}
+                    years</span>
+                </div>
+                <br />
+              {{/each}}
+
+            {{/each}}
+            <br />
+            {{#each groups}}
+              <div
+                class='accordion accordion-flush'
+                id='accordionFlushExample'
+              >
+                <div class='accordion-item'>
+                  <h2 class='accordion-header'>
+                    <button
+                      class='accordion-button collapsed'
+                      type='button'
+                      data-bs-toggle='collapse'
+                      data-bs-target='#flush-collapseOne'
+                      aria-expanded='false'
+                      aria-controls='flush-collapseOne'
+                    >
+                      <h3><small
+                          class='text-body-secondary'
+                        >Group: {{name}}</small></h3>
+                    </button>
+                  </h2>
+                  <div
+                    id='flush-collapseOne'
+                    class='accordion-collapse collapse'
+                    data-bs-parent='#accordionFlushExample'
+                  >
+                    <div class='accordion-body'>
+
+                      <ul>
+                        <li><div>id:
+                            {{id}}.<b>{{name}}</b></div>
+                          <div><i>{{description}}</i></div>
+                          <hr />
+                          {{#each members}}
+                            <div>
+                              id:
+                              {{id}}.
+                              {{name}}
+                              |
+                              {{gender}},
+                              {{age}}
+                              years
+                            </div>
+                          {{/each}}
+                        </li>
+                      </ul>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/each}}
+            {{#each friends}}
+              {{#each groups}}
+                <div
+                  class='accordion accordion-flush'
+                  id='accordionFlushExample'
+                >
+                  <div class='accordion-item'>
+                    <h2 class='accordion-header'>
+                      <button
+                        class='accordion-button collapsed'
+                        type='button'
+                        data-bs-toggle='collapse'
+                        data-bs-target='#flush-collapseOne'
+                        aria-expanded='false'
+                        aria-controls='flush-collapseOne'
+                      >
+                        <h3><small
+                            class='text-body-secondary'
+                          >Friends Group:
+                            {{name}}</small></h3>
+                      </button>
+                    </h2>
+                    <div
+                      id='flush-collapseOne'
+                      class='accordion-collapse collapse'
+                      data-bs-parent='#accordionFlushExample'
+                    >
+                      <div class='accordion-body'>
+
+                        <ul>
+                          <li><div>id:
+                              {{id}}.<b>{{name}}</b></div>
+                            <div><i
+                              >{{description}}</i></div>
+                            <hr />
+                            {{#each members}}
+                              <div>
+                                id:
+                                {{id}}.
+                                {{name}}
+                                |
+                                {{gender}},
+                                {{age}}
+                                years
+                              </div>
+                            {{/each}}
+                          </li>
+                        </ul>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {{/each}}
+            {{/each}}
+
+          </div>
+          <br />
+          <hr />
+        </li>
+      {{/each}}
+    </ul>
+  </main>
+</div>
+
+{{! 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+}}
