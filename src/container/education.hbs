@@ -6,11 +6,11 @@
 <div>
 
   <main>
-    <section>
+    <section class="mb-5">
       {{>title data='My education' big=true}}
-      <br>
+      
       {{#with main}}
-        <ul>
+        <ul class="ps-5">
           {{#each educations}}
             <li>{{name}}
               {{#unless isEnd}} - навчання триває {{/unless}}</li>
@@ -20,8 +20,8 @@
     </section>
     <section>
       {{>title data='My certificates'}}
-      <br>
-      <ul>
+      
+      <ul class="ps-5">
         {{#each certificates}}
         <li><div>{{name}} ({{id}})</div>
         <div><em>{{org}}</em> | {{date}}</div>
