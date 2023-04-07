@@ -1777,5 +1777,32 @@ router.get('/shophome', function (req, res) {
 })
 
 // ================================================================
+router.get('/list', function (req, res) {
+  res.render('list', {
+    list: [
+      { name: 'First button' },
+      { name: 'Secondary button' },
+      { name: 'Error button' },
+      { name: 'Submit button' },
+    ],
+    user: {
+      name: 'Ivan',
+      Surname: 'Radchenko',
+      age: 32,
+      role: 'admin',
+      isConfirm: true,
+    },
+    user2: {
+      name: {
+        value: 'Ivan',
+        text: 'Petrovich',
+      },
+      Surname: { text: 'Radchenko' },
+      age: { value: 32 },
+      role: { value: 'admin' },
+      isConfirm: { value: true },
+    },
+  })
+})
 // Підключаємо роутер до бек-енду
 module.exports = router

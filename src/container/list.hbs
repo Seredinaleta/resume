@@ -1,0 +1,46 @@
+<main>
+  <div>
+    <ul>
+      {{#each list}}
+        <li>
+          {{#if @first}}<button>{{name}}</button>{{/if}}
+          {{#if @last}}Останній елемент списку{{/if}}
+          <span>{{name}}</span>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  {{!-- ===================================== --}}
+  <div>
+    <ul>
+      {{#each list}}
+        <li>
+          <button {{#if @last}}disabled{{/if}}>{{name}} - {{@index}}</button>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  {{!-- ========================= --}}
+  <div>
+    <ul>
+      {{#each user}}
+        <li>
+          {{this}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  {{!-- ================ --}}
+  <div>
+    <ul>
+      {{#each user2}}
+        <li>
+          {{@key}}:
+          {{#if value}}
+          {{value}} {{else}} {{text}}
+          {{/if}},
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</main>
