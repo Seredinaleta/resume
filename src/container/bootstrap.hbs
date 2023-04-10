@@ -1,4 +1,5 @@
 <main class='p-5'>
+
   {{! ===================================== }}
   {{! Lesson-3 Nav }}
   <div class='row'>
@@ -85,7 +86,140 @@
       </div>
     </div>
   </div>
+  {{! ====================================================
+  Lesson input fields }}
+  <div class='row mt-5'>
+    <div class='col-2 pt-1 ps-4'>
+      <label class='form-label'>Email address</label>
+    </div>
+    <div class='col-3'>
+      <input
+        class='form-control form-control-sm'
+        type='text'
+      />
+    </div>
+    <div class='col-7'>
+    </div>
+    <div class='col-5 text-end'>
+      <div class='form-text text-danger'>You need to set
+        correct Email</div>
+    </div>
+  </div>
+  <div class='col-12 my-5'>
+    <label class='form-label'>Select new color for your life</label>
+    <div class='row'>
+      <div class='col-2 text-center'>
+        <label class='form-label'>Передпокій</label>
+        <input class='form-control' type='color' />
+        <input class='form-control' type='color' />
+        <input class='form-control' type='color' />
+      </div>
+      <div class='col-2 text-center'>
+        <label class='form-label'>Спальня</label>
+        <input class='form-control' type='color' />
+        <input class='form-control' type='color' />
+        <input class='form-control' type='color' />
+      </div>
+      <div class='col-2 text-center'>
+        <label class='form-label'>Вітальня</label>
+        <input class='form-control' type='color' />
+        <input class='form-control' type='color' />
+        <input class='form-control' type='color' />
+      </div>
+    </div>
+    <div class='col-7 form-text text-success'>You can set
+      the color for new style of your home</div>
+  </div>
+  <div class='col-6'>
+    <label class='form-label'>Email address</label>
+    <input disabled class='form-control' type='text' />
+    <div class='form-text text-danger'>You need to set
+      correct Email</div>
+  </div>
+  <hr />
+  <div class='row'>
+    <div class='col-3'>
+      <label class='form-label'>Select options</label>
+      <select class='form-select'>
+        <option selected>Open list and choose</option>
+        <option value='1'>One</option>
+        <option value='2'>Two</option>
+        <option value='3'>Three</option>
+      </select>
+    </div>
+    <div class='col-4 ps-5'>
+      <div class='row'>
+        <label class='form-label'>Select furniture</label>
+        <div class='form-check col-4'>
+          <label class='form-check-label'>chear</label>
+          <input
+            name='furniture'
+            type='checkbox'
+            class='form-check-input'
+          />
+        </div>
+        <div class='form-check col-4'>
+          <label class='form-check-label'>table</label>
+          <input
+            name='furniture'
+            type='checkbox'
+            class='form-check-input'
+          />
+        </div>
+        <div class='form-check col-4'>
+          <label class='form-check-label'>bed</label>
+          <input
+            name='furniture'
+            type='checkbox'
+            class='form-check-input'
+          />
+        </div>
+      </div>
+    </div>
+    <div class='col-4'>
+      <label class='form-check-label'>Wallpaper</label>
+      <div class='row pt-2'>
+        <div class='form-check col-4'>
+          <label class='form-check-label'>flowers</label>
+          <input
+            name='design'
+            type='radio'
+            class='form-check-input'
+          />
+        </div>
+        <div class='form-check col-4'>
+          <label class='form-check-label'>shapes</label>
+          <input
+            name='design'
+            type='radio'
+            class='form-check-input'
+          />
+        </div>
+        <div class='form-check col-4'>
+          <label class='form-check-label'>no</label>
+          <input
+            name='design'
+            type='radio'
+            class='form-check-input'
+          />
+        </div>
+      </div>
+    </div>
+    <div class='col-6 mt-3'>
+      <div class='form-check form-switch'>
+        <label class='form-check-label'>Використати знижку</label>
+        <input
+          type='checkbox'
+          class='form-check-input'
+          name='fin'
+        />
+      </div>
+    </div>
+  </div>
+
   {{! ==============================================
+ 
+
   Lesson-1 }}
   {{!-- <div class="row g-2">
     <section class="col-4">
