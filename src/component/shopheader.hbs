@@ -1,0 +1,15 @@
+<section class='nav row p-0 mb-3'>
+  {{#with navigation}}
+  <div class='nav-item col-9'>
+    <h1>{{Logo}}</h1>
+  </div>
+  <div class='nav col-3 p-0 ps-4 text-end'>
+    {{#each links}}
+    <div class='nav-item'>
+      <a class='nav-link  {{#if @last}} disabled {{/if}} ps-0' href={{href}}>{{text}}</a>
+    </div>
+    {{/each}}
+  </div>
+  {{/with}}
+  <hr />
+</section>

@@ -1,0 +1,19 @@
+<div class='card text-bg-dark mt-4 p-0'>
+  <div class='card-header pb-0'>
+    <p>{{title}}
+      {{#if isNew}}
+        <span
+          class='badge text-bg-success text-light rounded-pill'
+        >Нова
+        </span>{{/if}}
+      {{#if isTop}}
+        <span
+          class='badge text-bg-danger text-light rounded-pill'
+        >Топ
+        </span>{{/if}}
+    </p>
+  </div>
+  <div class='card-body'>
+    <p>{{description}}</p>
+  </div>
+</div>
