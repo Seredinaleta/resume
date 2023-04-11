@@ -1,0 +1,83 @@
+<main>
+  <section class="row m-0 px-0 my-5">
+    {{#with header}}
+    <div class="col-9 ps-0">
+      <h1>{{title}}</h1>
+    </div>  
+      <div class="col-3 pe-0 text-end">
+      {{#with button}}
+        <a
+          class='  btn btn-outline-secondary'
+          href={{link}}
+        >{{text}}</a>
+        </div>
+      {{/with}}
+    {{/with}}
+  </section>
+
+  <hr class="my-5">
+
+  <section class="row m-0 px-0 my-3">
+  {{#each goodsBlock}}
+  {{>cartGoodsItem}}
+    
+  {{/each}}
+  </section>
+  <hr class="my-4">
+  <section class="row mb-4">
+    {{#with total}}
+      <div class="col-8">
+      
+      <h4 >{{title}}</h5>
+      <h3 >{{amount}}</h3>
+      <p>{{delivery}}</p>
+      
+    </div>
+    <div class="col-4 ">
+      {{#each buttons}}
+      <div class="my-3">
+        <a href={{link}} class="btn btn-sm
+        {{#if isSuccess}}btn-success{{/if}}
+        {{#if isOutline}}btn-outline-success{{/if}}
+        ">{{text}}</a>
+      </div>
+      {{/each}}
+    </div>
+  {{/with}}
+  </section>
+  <hr class="my-4">
+  
+  <section class='row'>
+  {{#with goodsOtherBlock}}
+  <h2 class="text-center mb-3">{{title}}</h2>
+   {{#each cards}}
+  <div class="col-4">
+    {{>shopcard}}    
+  </div>
+  {{/each}}
+  {{/with}}
+
+</section>
+
+<hr class="my-5">
+<section>
+  {{#with subscribe}}
+  <div class='card text-bg-dark'>
+  <div class='card-body row'>
+    <div class="col-6">
+    <h2 class='card-title'>{{header}}</h2>
+    <p class="mb-0">{{description}}</p>
+    </div>
+    <div class="col-6 text-end py-3 px-2">
+    {{#each buttons}}
+      <a
+        href={{link}}
+        class='btn btn-primary'
+      >{{text}}</a>
+    {{/each}}
+    </div>
+  </div>
+</div>
+  {{/with}}
+</section>
+</main>
