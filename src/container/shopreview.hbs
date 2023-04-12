@@ -1,0 +1,91 @@
+<main class='row'>
+  {{#with formBlock}}
+    <section class='col-8 mt-5'>
+      <h1 class='mb-3'>{{header}}</h1>
+      {{#with rating}}
+        <p>{{title}}: {{value}}</p>
+      {{/with}}
+    {{#with actionBlock}}
+        <ul class=" row nav nav-tabs mb-4">
+          {{#each tabs}}
+          <li class="nav-item col-4 text-center">
+            <a class="nav-link {{#if isActive}}active{{/if}}" href="#">{{text}}</a>
+          </li>
+          {{/each}}
+        </ul>
+      <hr class="my-5">
+        {{#with report}}
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title" >{{title}}</p>
+            {{#with button}}
+            <div>
+            <a class="btn btn-sm btn-secondary" href={{link}}>{{text}}</a>
+            </div>
+            {{/with}}
+          </div>
+        </div>
+        {{/with}}
+    {{/with}}
+    <hr class="my-5">
+      {{#with feedbackBlock}}
+      <h2 class="mb-5">{{title}}</h2>
+      <div class="me-2">
+        {{#each buttons}}
+          <a href={{link}} class="btn btn-sm me-2
+          {{#if isWarning}}btn-warning text-light{{/if}}
+          {{#if isSuccess}}btn-success{{/if}}
+          {{#if isDanger}}btn-danger{{/if}}
+          ">{{text}}</a>
+        {{/each}}
+      </div>
+      {{/with }}
+    </section>
+    <section class="col-4 mt-5">
+      {{#with goodsInfo}}
+      <div class="card mb-3">
+        <div class="card-body">
+          <img class='mb-3'src={{photo}} alt="#">
+          <h6 class="card-title mb-0">{{name}}</h6>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h6 class="card-title mb-2">{{price}}</h6>
+          {{#with confirmed}}
+          {{#if isConfirm}}
+          <p class="mb-0">{{text}}</p>
+          {{/if}}
+          {{/with}}
+          {{#each buttons}}
+          <div>
+            <a href={{link}} class="btn btn-sm mb-2
+            {{#if isPrimary}}btn-primary{{/if}}
+            {{#if isSecondary}}btn-secondary{{/if}}
+            ">{{text}}</a>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          {{#with seller}}
+          <p class="mb-0">{{title}}:<span><b> {{value}}</b></span></p>
+          {{/with}}
+        </div>
+      </div>
+      {{/with}}
+    </section>
+  {{/with}}
+  <hr class="my-5">
+  <section>
+{{#each reviewList}}
+  {{>reviewItem}}
+{{/each}}
+</section>
+<section>
+  {{#with service}}
+  {{>shopaction}}
+  {{/with}}
+</section>
+</main>
