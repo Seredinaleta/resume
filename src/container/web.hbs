@@ -1,23 +1,23 @@
 <div>
   <header>
   {{#with web}}
-      <h1>Web languages</h1>
+      <h1 class="mb-5">Web languages</h1>
   </header>
   <main> 
     {{#each languages}}
     <ul>
       <li>
         <div>{{>title data=name big=true}}</div>
-        <div>Version: {{version}}</div>
-        <br>
-        <div><em>{{description}}</em></div>
+        <div class="mb-4">Version: {{version}}</div>
+        
+        <div class="mb-4"><em>{{description}}</em></div>
         {{#each elements}}
         <ul>
-          <li>
+          <li class="row">
             <div>{{>title data=name}}</div>
-            <div><em>{{description}}</em></div>
+            <div class="mb-4"><em>{{description}}</em></div>
             {{#each attributes}}
-            <dl>
+            <dl class="col-5">
               <dt>{{name}}</dt>
               <dd>{{description}}</dd>
             </dl>
@@ -28,11 +28,11 @@
         {{/each}}
         {{#each properties}}
         <ul>
-          <li>
+          <li class="row">
             <div>{{>title data=name}}</div>
             <div><em>{{description}}</em></div>
             {{#each values}}
-            <dl>
+            <dl class="col-5">
               <dt>{{value}}</dt>
               <dd>{{description}}</dd>
             </dl>

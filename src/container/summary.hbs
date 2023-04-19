@@ -7,13 +7,15 @@
     {{#with main}}
     <main>
         <section class="mb-5">
-           {{>title data=summary.title big=true}}
+            {{#with summary}}
+           {{>title data=title big=true}}
             
             <div>
                 <p>
-                    {{summary.text}}
+                    {{text}}
                 </p>
             </div>
+            {{/with}}
         </section>
         {{#with experience}}
         <section>

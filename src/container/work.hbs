@@ -3,20 +3,21 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
 
-<div>
+
     {{#with main}}
     <main>
         <section>
-           {{>title data='Work history' big=true}}
+            <h1 class="my-5 text-center display-3">{{>title data='Work history' big=true}}</h1>
+           
             <div>
                 <ul>
                {{#each works}}
-                <li>
-                    <div>{{position}}</div>
+                <li class="row">
+                    <div class="display-6 mb-3 col-12">{{position}}</div>
 
-                    <br>
+                    
 
-                    <div>
+                    <div class="col-3 mb-3">
                         {{duration.from}} - 
                         {{#if duration.to}}
                             {{duration.to}}
@@ -25,10 +26,10 @@
                         {{/if}}
                     </div>
 
-                    <br>
+                    
                     {{#with company}}
                     {{#if url}}
-                    <div>{{>link text=name href=url blank=true noline=true}}</div>
+                    <div class="col-3 mb-3">{{>link text=name href=url blank=true noline=true}}</div>
                     {{else}}
                     <div><b>{{name}}</b></div>
                     {{/if}}
@@ -41,7 +42,7 @@
                     <br>
                     <ul>
                         {{#each projects}}
-                        <li>
+                        <li >
                             <div>{{>link text=name href=url blank=true noline=true}}
                             </div>
                             <br>
@@ -49,11 +50,11 @@
                                 <p>{{about}}</p>
                             </div>
                             <br>
-                            <div><em>Project stacs ({{stackAmount}})</em></div>
+                            <div ><em>Project stacs ({{stackAmount}})</em></div>
                             <br>
                             <ul>
                                 {{#each stacks}}
-                                <li>{{name}}</li>
+                                <li class="col-3">{{name}}</li>
                                 {{/each}}
                             </ul>
                             <br>
@@ -80,7 +81,7 @@
     {{/with}}
     
 
-</div>
+
 
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs

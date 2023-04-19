@@ -3,6 +3,7 @@ const express = require('express')
 // Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
 // ==================================================================
+
 var header = {
   name: {
     firstname: 'Yuliia',
@@ -37,8 +38,113 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
-  //                  ↑↑ сюди вводимо JSON дані
+  res.render('index', {
+    layout: 'index',
+    page: {
+      title: 'Pet Project',
+    },
+
+    name: {
+      firstname: 'Yuliia',
+      lastname: 'Trubina',
+    },
+    links: [
+      {
+        name: 'summary',
+        url: '/summary',
+      },
+      {
+        name: 'skills',
+        url: '/skills',
+      },
+      {
+        name: 'education',
+        url: '/education',
+      },
+      {
+        name: 'work',
+        url: '/work',
+      },
+      {
+        name: 'person',
+        url: '/person',
+      },
+      {
+        name: 'bio',
+        url: '/bio',
+      },
+      {
+        name: 'program',
+        url: '/program',
+      },
+      {
+        name: 'web',
+        url: '/web',
+      },
+      {
+        name: 'js',
+        url: '/js',
+      },
+      {
+        name: 'car',
+        url: '/car',
+      },
+      {
+        name: 'mac',
+        url: '/mac',
+      },
+      {
+        name: 'facebook',
+        url: '/facebook',
+      },
+      {
+        name: 'task21',
+        url: '/task21',
+      },
+      {
+        name: 'task22',
+        url: '/task22',
+      },
+      {
+        name: 'task31',
+        url: '/task31',
+      },
+    ],
+    shoplinks: [
+      {
+        name: 'shophome',
+        url: '/shophome',
+      },
+      {
+        name: 'shopproduct',
+        url: '/shopproduct',
+      },
+      {
+        name: 'shopnews',
+        url: '/shopnews',
+      },
+      {
+        name: 'shoporder',
+        url: '/shoporder',
+      },
+      {
+        name: 'shopcart',
+        url: '/shopcart',
+      },
+      {
+        name: 'shopprofile',
+        url: '/shopprofile',
+      },
+      {
+        name: 'shopreview',
+        url: '/shopreview',
+      },
+      {
+        name: 'shopcatalog',
+        url: '/shopcatalog',
+      },
+    ],
+  })
 })
 
 // ================================================================

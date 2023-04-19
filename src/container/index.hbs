@@ -3,15 +3,43 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
 
-<div class='p-5'>
-  <h1>USB хаб Type C 12 в 1 HDMI VGA AUX 3.5 mm</h1>
-
-  <button
-    type='button'
-    class='btn btn-primary'
-  >Купити</button>
-</div>
-
+<h1 class='mt-5'>Список сторінок</h1>
+<p>Стартовий проект на курсі FULLSTACK Developer зроблений
+  на основі бібліотеки Bootstrap</p>
+{{! <hr class='my-3' /> }}
+<section class='my-5'>
+  <h2 class='mb-5'>
+    Basic Pages:
+    <small class='text-body-secondary'>Базові сторінки
+      проекту Резюме</small>
+  </h2>
+  <div class='row'>
+    {{#each links}}
+      <div class='col-3'>
+        <a href={{url}} class='btn btn-primary my-2'><span
+            class='text-uppercase'
+          >{{name}}</span></a>
+      </div>
+    {{/each}}
+  </div>
+</section>
+<section class='my-5'>
+  <h2 class='mb-5'>
+    Shop pages:
+    <small class='text-body-secondary'>Сторінки
+      інтернет-магазину</small></h2>
+    <div class='row'>
+      {{#each shoplinks}}
+        <div class='col-3'>
+          <a
+            href={{url}}
+            class='btn btn-outline-primary my-2'
+          ><span class='text-uppercase'>{{name}}</span></a>
+        </div>
+      {{/each}}
+    </div>
+  </h2>
+</section>
 {{! 
     Цей код містить лише те, що буде виводитись в <body>
     Адже наш layout/default.hbs має вже структуру HTML

@@ -6,11 +6,11 @@
 <div>
 
   <main>
-    <section>
-      <h1>{{name}}</h1>
+    <section class="mb-5">
+      <h1 class="mb-3">{{name}}</h1>
       <div><em>{{occupation}}</em></div>
-      <div>{{nationality}}</div>
-      <br />
+      <div class="mb-3">{{nationality}}</div>
+      
       <div>{{birthdate}}
         -
         {{birthplace}}</div>
@@ -19,12 +19,12 @@
         {{deathplace}}</div>
         
       </section> 
-      <section> 
+      <section class="mb-5 row"> 
       {{>title data='Famous for:' big=true}}  
       {{#each known_for}}
-        <ul>
-          <li>
-            <div>{{this}}</div>
+        <ul class="row">
+          <li class="col-6">
+            {{this}}
           </li>
         </ul>
       {{/each}}
